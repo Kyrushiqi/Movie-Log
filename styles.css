@@ -1,0 +1,13 @@
+.controls{
+    display:flex;
+    gap:15px;
+    justify-content: end;
+}
+
+#form-submit-btn {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
