@@ -20,7 +20,7 @@
     <!-- .container class provides a responsive fixed width container -->
     <div class="container">
       <h1>Movie Log</h1>
-      <p>Keep track of your Movies here</p>
+      <p>Keep track of your movies here</p>
       
       <div class="controls">
         
@@ -28,6 +28,10 @@
           <input type="text" id="search-input" class="form-control" placeholder="Search movies...">
         </div>
         <button id="Add-Movie-btn" class="btn primary-btn" onclick="showAddMovieForm()">Add Movie</button>
+      </div>
+
+      <div class="container" id="movies-container">
+        <!-- Movies will be added here -->
       </div>
 
 
@@ -38,15 +42,15 @@
             <h2>Add New Movie</h2>
 
             <label for="title">Title</label><br>
-              <input class="form-control" type="text" placeholder="Enter movie title">
+              <input class="form-control" type="text" placeholder="Enter movie title" id="titleInput">
             <label for="director">Director</label><br>
-              <input class="form-control" type="text" placeholder="Enter movie director">
+              <input class="form-control" type="text" placeholder="Enter movie director" id="directorInput">
             <label for="genre">Genre</label><br>
-              <input class="form-control" type="text" id="genre" placeholder="e.g., Action, Comedy, Drama">
+              <input class="form-control" type="text" placeholder="e.g., Action, Comedy, Drama" id="genreInput">
             <label for="rating">Rating</label><br>
-            <input class="form-control" type="text" placeholder="Enter rating ?/5">
+            <input class="form-control" type="text" placeholder="Enter rating ?/5" id="ratingInput">
             <label for="watch-status">Watch Status</label><br>
-              <div class="watch-status-bar">
+              <div class="watch-status-bar" id="watchStatusInput">
                 <select class="form-select form-select-sm mt-3">
                   <option>Unwatched</option>
                   <option>Watching</option>
@@ -56,7 +60,7 @@
 
               <div class="form-buttons">
                 <button type="button" id="cancel-btn" class="btn" onclick="cancelAddMovieForm()">Cancel</button>
-                <button type="submit" class="btn primary-btn">Add to Log</button>
+                <button type="submit" class="btn primary-btn" onclick="addToLog()">Add to Log</button>
             </div>
           </form>
 
@@ -95,11 +99,7 @@
            <li><a class="dropdown-item" href="#">Finished</a></li>
           </ul>
         </div> -->
-
-        
       </div>
-
-      
     </div>
     
     <script src="index.js"></script>
