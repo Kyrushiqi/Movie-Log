@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     color: black;
-    background-color: #f8f9fa;
+    background-color: #9ac2d4;
 }
 
 h1{
@@ -74,7 +74,7 @@ h1{
   
 /* Add Movie Form Styling */
 .movie-form-container {
-    background-color: #e8e8e8;
+    background-color: #96a9c3;
     padding: 25px;
     border-radius: 8px;
     margin-bottom: 30px;

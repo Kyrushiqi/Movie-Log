@@ -80,10 +80,10 @@ function renderMovies(){
 
                     <p class="card-rating">Rating:
                     <select id="rating-${index}" class="form-select form-select-sm mt-3">
-                        <option value="⭐" ${entry.rating === "⭐" ? "selected" : ""}>⭐</option>
-                        <option value="⭐⭐" ${entry.rating === "⭐⭐" ? "selected" : ""}>⭐⭐</option>
-                        <option value="⭐⭐⭐" ${entry.rating === "⭐⭐⭐" ? "selected" : ""}>⭐⭐⭐</option>
-                        <option value="⭐⭐⭐⭐" ${entry.rating === "⭐⭐⭐⭐" ? "selected" : ""}>⭐⭐⭐⭐</option>
+                        <option value="⭐☆☆☆☆" ${entry.rating === "⭐☆☆☆☆" ? "selected" : ""}>⭐☆☆☆☆</option>
+                        <option value="⭐⭐☆☆☆" ${entry.rating === "⭐⭐☆☆☆" ? "selected" : ""}>⭐⭐☆☆☆</option>
+                        <option value="⭐⭐⭐☆☆" ${entry.rating === "⭐⭐⭐☆☆" ? "selected" : ""}>⭐⭐⭐☆☆</option>
+                        <option value="⭐⭐⭐⭐☆" ${entry.rating === "⭐⭐⭐⭐☆" ? "selected" : ""}>⭐⭐⭐⭐☆</option>
                         <option value="⭐⭐⭐⭐⭐" ${entry.rating === "⭐⭐⭐⭐⭐" ? "selected" : ""}>⭐⭐⭐⭐⭐</option>
                     </select>
                     </p>
