@@ -4,5 +4,6 @@ A project for CISC 3650 Human Computer Interactions: <br>
 [Website (Github Pages)](https://kyrushiqi.github.io/Movie-Log/) <br>
 
 # Showcase
-![alt text](https:// "Movie Log") <br>
-![alt text](https:// "Movie Log 2") <br>
+![alt text](https://github.com/Kyrushiqi/Movie-Log/blob/26d69a44a890d5c2dcf8a1311d7c8062f3643205/Movie%20Log.png?raw=true) <br>
+
+![alt text](https://github.com/Kyrushiqi/Movie-Log/blob/26d69a44a890d5c2dcf8a1311d7c8062f3643205/Movie%20Log%202.png?raw=true) <br>
