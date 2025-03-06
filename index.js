@@ -65,7 +65,7 @@ function editMovies(index){
 // Base is from wishlist website
 function renderMovies(){
     moviesContainer.innerHTML = ""; // Clear container before rendering to prevent duplicate entries.
-
+    
     // Loops through the movies array, creating a new card for each movie and displays it
     // <img class= "card-image" src=${entry.image}> --> for poster image in the future
     movies.forEach((entry, index) => {
@@ -126,6 +126,10 @@ function renderMovies(){
         watchStatusDropdown.addEventListener("change", function () {
             movies[index].watchStatus = this.value;
             saveMovies(); // Save updated status
+
+            if(watchStatusDropdown.value == "Completed"){
+                confetti();
+            }
         });
 
     });
