@@ -79,7 +79,7 @@ function renderMovies(){
                     <p class="card-text">Genre: ${entry.genre}</p>
 
                     <p class="card-rating">Rating:
-                    <select id="rating-dropdown" class="form-select form-select-sm mt-3">
+                    <select id="rating-${index}" class="form-select form-select-sm mt-3">
                         <option value="⭐" ${entry.rating === "⭐" ? "selected" : ""}>⭐</option>
                         <option value="⭐⭐" ${entry.rating === "⭐⭐" ? "selected" : ""}>⭐⭐</option>
                         <option value="⭐⭐⭐" ${entry.rating === "⭐⭐⭐" ? "selected" : ""}>⭐⭐⭐</option>
@@ -89,7 +89,7 @@ function renderMovies(){
                     </p>
 
                     <p class="card-watch-status">Watch Status:
-                    <select id="watchStatus-dropdown" class="form-select form-select-sm mt-3">
+                    <select id="watchStatus-${index}" class="form-select form-select-sm mt-3">
                         <option value="Not Watched" ${entry.watchStatus === "Not Watched" ? "selected" : ""}>Not Watched</option>
                         <option value="Watching" ${entry.watchStatus === "Watching" ? "selected" : ""}>Watching</option>
                         <option value="Completed" ${entry.watchStatus === "Completed" ? "selected" : ""}>Completed</option>
@@ -111,7 +111,7 @@ function renderMovies(){
         moviesContainer.appendChild(card); // Adds new movie card to the moviesContainer where it will be displayed
         
         // Added event listener to update rating status in localStorage
-        let ratingDropdown = document.getElementById(`rating-dropdown`);
+        let ratingDropdown = document.getElementById(`rating-${index}`);
         ratingDropdown.addEventListener("change", function () {
             movies[index].rating = this.value;
             saveMovies(); // Save updated status
@@ -122,7 +122,7 @@ function renderMovies(){
         // watchStatusDropdown.value = entry.watchStatus; 
 
         // Added event listener to update watch status in localStorage, ChatGPT
-       let watchStatusDropdown = document.getElementById(`watchStatus-dropdown`);
+       let watchStatusDropdown = document.getElementById(`watchStatus-${index}`);
         watchStatusDropdown.addEventListener("change", function () {
             movies[index].watchStatus = this.value;
             saveMovies(); // Save updated status
