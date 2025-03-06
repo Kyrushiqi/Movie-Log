@@ -14,3 +14,7 @@ Used to hide and show the Add Movie Form
 .hidden {
     display: none;
 }
+
+.favorite {
+    background-color: pink;;
+}
