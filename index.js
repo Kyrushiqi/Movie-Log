@@ -18,7 +18,7 @@ JSON.parse() converts a JSON string to an object or array. (JSON string -> objec
 */
 
 // Movie data array, Retrieving data from local storage.
-// JSON.parse(localStorage.getItem("movieLog")) converts the saved JSON string into an array.
+// JSON.parse(localStorage.getItem("movieLog")) converts the saved JSON string into an array. movieLog is a key stored in a browser's local storage.
 // If there’s no saved data, it initializes movies as an empty array.
 let movies = JSON.parse(localStorage.getItem("movieLog")) || [];
 
@@ -38,7 +38,7 @@ function addToLog(){
         image: document.getAnimations("imageInput").value
     }
 
-    movies.push(newMovie) // Add movie to movies array
+    movies.push(newMovie) // Add newMovie object to movies array
     saveMovies() // Save the updated array to localstorage
     renderMovies() // Update UI with new movie list
     cancelAddMovieForm() // Hide the form after submission
@@ -78,24 +78,25 @@ function renderMovies(){
                     <p class="card-text">Director: ${entry.director}</p>
                     <p class="card-text">Genre: ${entry.genre}</p>
 
-                    <p class="card-rating">Rating:</p>
-                    <select id="rating-${index}" class="form-select form-select-sm mt-3">
+                    <p class="card-rating">Rating:
+                    <select id="rating-dropdown" class="form-select form-select-sm mt-3">
                         <option value="⭐" ${entry.rating === "⭐" ? "selected" : ""}>⭐</option>
                         <option value="⭐⭐" ${entry.rating === "⭐⭐" ? "selected" : ""}>⭐⭐</option>
                         <option value="⭐⭐⭐" ${entry.rating === "⭐⭐⭐" ? "selected" : ""}>⭐⭐⭐</option>
                         <option value="⭐⭐⭐⭐" ${entry.rating === "⭐⭐⭐⭐" ? "selected" : ""}>⭐⭐⭐⭐</option>
                         <option value="⭐⭐⭐⭐⭐" ${entry.rating === "⭐⭐⭐⭐⭐" ? "selected" : ""}>⭐⭐⭐⭐⭐</option>
                     </select>
+                    </p>
 
-
-                    <p class="card-watch-status-${index}">Watch Status:</p>
-                    <select id="watchStatus-${index}" class="form-select form-select-sm mt-3">
+                    <p class="card-watch-status">Watch Status:
+                    <select id="watchStatus-dropdown" class="form-select form-select-sm mt-3">
                         <option value="Not Watched" ${entry.watchStatus === "Not Watched" ? "selected" : ""}>Not Watched</option>
                         <option value="Watching" ${entry.watchStatus === "Watching" ? "selected" : ""}>Watching</option>
                         <option value="Completed" ${entry.watchStatus === "Completed" ? "selected" : ""}>Completed</option>
                     </select>
-
-                    <p class="card-text">Notes: ${entry.notes}</p>
+                    </p>
+                    
+                    <p class="card-notes">Notes: ${entry.notes}</p>
 
                     <button class="btn btn-outline-danger" onclick="removeMovies(${index})" id="entryDeleteButton">Delete</button>
                     <button class="btn btn-outline-dark" onclick="editMovies(${index})" id="edit-btn">Edit</button>
@@ -110,7 +111,7 @@ function renderMovies(){
         moviesContainer.appendChild(card); // Adds new movie card to the moviesContainer where it will be displayed
         
         // Added event listener to update rating status in localStorage
-        let ratingDropdown = document.getElementById(`rating-${index}`);
+        let ratingDropdown = document.getElementById(`rating-dropdown`);
         ratingDropdown.addEventListener("change", function () {
             movies[index].rating = this.value;
             saveMovies(); // Save updated status
@@ -121,7 +122,7 @@ function renderMovies(){
         // watchStatusDropdown.value = entry.watchStatus; 
 
         // Added event listener to update watch status in localStorage, ChatGPT
-       let watchStatusDropdown = document.getElementById(`watchStatus-${index}`);
+       let watchStatusDropdown = document.getElementById(`watchStatus-dropdown`);
         watchStatusDropdown.addEventListener("change", function () {
             movies[index].watchStatus = this.value;
             saveMovies(); // Save updated status

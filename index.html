@@ -21,13 +21,13 @@
     <div class="container">
       <h1>Movie Log</h1>
       <p>Keep track of your movies here</p>
-      
+    
       <div class="controls">
         
         <div class="search-container">
           <input type="text" id="search-input" class="form-control" placeholder="Search movies...">
         </div>
-        <button id="Add-Movie-btn" class="btn primary-btn" onclick="showAddMovieForm()">Add Movie</button>
+        <button id="Add-Movie-btn" class="btn btn-outline-dark" onclick="showAddMovieForm()">Add Movie</button>
       </div>
 
       <div class="container" id="movies-container">
@@ -59,7 +59,7 @@
               </select>
             </div>
 
-            <label for="watch-status">Watch Status</label><br>
+            <label for="watch-status" id="watch-status">Watch Status</label><br>
               <div class="watch-status-bar">
                 <select class="form-select form-select-sm mt-3" id="watchStatusInput">
                   <option>Not Watched</option>
@@ -68,7 +68,7 @@
                 </select>
               </div>
 
-              <label for="notes">Notes</label><br>
+              <label for="notes" id="notes">Notes</label><br>
               <textarea class="form-control" type="text" placeholder="Your thoughts about this movie..." id="notesInput"></textarea>
               
               <label for="image">Movie Poster</label><br>
@@ -76,8 +76,8 @@
               <input type="file" id="imageInput">
 
               <div class="form-buttons">
-                <button type="button" id="cancel-btn" class="btn" onclick="cancelAddMovieForm()">Cancel</button>
-                <button type="submit" class="btn primary-btn" onclick="addToLog()">Add to Log</button>
+                <button type="button" id="cancel-btn" class="btn btn-outline-danger" onclick="cancelAddMovieForm()">Cancel</button>
+                <button type="submit" class="btn btn-outline-dark" onclick="addToLog()">Submit</button>
             </div>
           </form>
 
